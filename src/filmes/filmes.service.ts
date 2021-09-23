@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateFilmeDto } from './dto/create-filme.dto';
 
 export type Filme = {
   nome: string;
@@ -22,5 +23,9 @@ const filmes: Filme[] = [
 export class FilmesService {
   getAll() {
     return filmes;
+  }
+
+  createFilme(filme: CreateFilmeDto) {
+    return filmes.push(filme);
   }
 }
